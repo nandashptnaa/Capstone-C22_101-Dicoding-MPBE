@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:c22_101/common/image_view.dart';
 import 'package:c22_101/common/style.dart';
 import 'package:c22_101/utils/color.dart';
@@ -48,6 +50,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       );
 }
 
+// ignore: must_be_immutable
 class AppbarImage extends StatelessWidget {
   AppbarImage(
       {required this.height,
@@ -89,6 +92,7 @@ class AppbarImage extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class AppbarTitle extends StatelessWidget {
   AppbarTitle({required this.text, this.margin, this.onTap});
 
@@ -118,5 +122,3 @@ class AppbarTitle extends StatelessWidget {
     );
   }
 }
-
-

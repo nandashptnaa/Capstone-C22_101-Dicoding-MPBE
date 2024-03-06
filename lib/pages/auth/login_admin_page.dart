@@ -118,28 +118,28 @@ class _LoginAdminPageState extends State<LoginAdminPage> {
                             },
                           ),
                         ),
-                        const SizedBox(height: 10,),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Text.rich(TextSpan(
-                          text: "Masuk sebagai super admin",
-                          style: const TextStyle(
-                            color: Colors.black, fontSize: 16
-                          ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                            nextScreen(context, const LoginSupAdminPage());
-                          }                          
-                        )),
-                        const SizedBox(height: 10,),
+                            text: "Masuk sebagai super admin",
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 16),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                nextScreen(context, const LoginSupAdminPage());
+                              })),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Text.rich(TextSpan(
-                          text: "Masuk sebagai user",
-                          style: const TextStyle(
-                            color: Colors.black, fontSize: 14
-                          ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                            nextScreen(context, const LoginPage());
-                          }                          
-                        )),
+                            text: "Masuk sebagai user",
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 14),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                nextScreen(context, const LoginPage());
+                              })),
                       ],
                     )),
               ),
@@ -156,11 +156,12 @@ class _LoginAdminPageState extends State<LoginAdminPage> {
           .loginAdminNameandPassword(email, password)
           .then((value) async {
         if (value == true) {
-          QuerySnapshot snapshot =
-              await DatabaseServiceAdmin(uid: FirebaseAuth.instance.currentUser!.uid)
-                  .gettingAdminData(email);          
+          // ignore: unused_local_variable
+          QuerySnapshot snapshot = await DatabaseServiceAdmin(
+                  uid: FirebaseAuth.instance.currentUser!.uid)
+              .gettingAdminData(email);
           await HelperFunctionsAdmin.saveAdminLoggedStatus(true);
-          await HelperFunctionsAdmin.saveAdminEmail(email);          
+          await HelperFunctionsAdmin.saveAdminEmail(email);
           // ignore: use_build_context_synchronously
           nextScreenReplace(context, const ContactPage());
         } else {

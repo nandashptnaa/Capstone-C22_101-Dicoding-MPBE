@@ -292,6 +292,7 @@ class AppStyle {
   );
 }
 
+// ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField(
       {this.shape,
@@ -574,6 +575,7 @@ enum TextFormFieldFontStyle {
   InterRegular11,
 }
 
+// ignore: must_be_immutable
 class CustomButton extends StatelessWidget {
   CustomButton(
       {this.shape,

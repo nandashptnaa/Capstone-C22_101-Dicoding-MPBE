@@ -11,6 +11,7 @@ class AuthService {
               email: email, password: password))
           .user!;
 
+      // ignore: unnecessary_null_comparison
       if (user != null) {
         return true;
       }
@@ -26,6 +27,7 @@ class AuthService {
               email: email, password: password))
           .user!;
 
+      // ignore: unnecessary_null_comparison
       if (user != null) {
         await DatabaseService(uid: user.uid).savingUserData(fullName, email);
         return true;
@@ -56,6 +58,7 @@ class AuthServiceAdmin {
               email: email, password: password))
           .user!;
 
+      // ignore: unnecessary_null_comparison
       if (admin != null) {
         return true;
       }
@@ -71,8 +74,10 @@ class AuthServiceAdmin {
               email: email, password: password))
           .user!;
 
+      // ignore: unnecessary_null_comparison
       if (admin != null) {
-        await DatabaseServiceAdmin(uid: admin.uid).savingAdminData(fullName, email);
+        await DatabaseServiceAdmin(uid: admin.uid)
+            .savingAdminData(fullName, email);
         return true;
       }
     } on FirebaseAuthException catch (e) {
@@ -101,6 +106,7 @@ class AuthServiceSupAdmin {
               email: email, password: password))
           .user!;
 
+      // ignore: unnecessary_null_comparison
       if (supAdmin != null) {
         return true;
       }
@@ -116,8 +122,10 @@ class AuthServiceSupAdmin {
               email: email, password: password))
           .user!;
 
+      // ignore: unnecessary_null_comparison
       if (supAdmin != null) {
-        await DatabaseServiceSupAdmin(uid: supAdmin.uid).savingSupAdminData(fullName, email);
+        await DatabaseServiceSupAdmin(uid: supAdmin.uid)
+            .savingSupAdminData(fullName, email);
         return true;
       }
     } on FirebaseAuthException catch (e) {
@@ -136,4 +144,3 @@ class AuthServiceSupAdmin {
     }
   }
 }
-

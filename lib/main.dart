@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
           primaryColor: Constants().primaryColor,
           scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,
-      home: _isSignedIn ? const HomeDaftar(): const Load_page(),
+      home: _isSignedIn ? const HomeDaftar() : const Load_page(),
     );
   }
 }

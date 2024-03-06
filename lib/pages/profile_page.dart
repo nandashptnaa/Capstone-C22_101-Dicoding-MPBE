@@ -4,10 +4,11 @@ import 'package:c22_101/shared/constants.dart';
 import 'package:c22_101/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ProfilePage extends StatefulWidget {
   String userName;
   String email;
-  ProfilePage({super.key, required this.email, required this.userName});      
+  ProfilePage({super.key, required this.email, required this.userName});
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -30,12 +31,12 @@ class _ProfilePageState extends State<ProfilePage> {
               color: Colors.white, fontSize: 27, fontWeight: FontWeight.bold),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back), 
+          icon: const Icon(Icons.arrow_back),
           onPressed: () async {
             nextScreenReplace(context, const MainPage());
-          },          
+          },
         ),
-      ),      
+      ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 170),
         child: Column(

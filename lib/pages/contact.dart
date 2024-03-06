@@ -1,4 +1,3 @@
-import 'package:c22_101/pages/daftar.dart';
 import 'package:c22_101/pages/main_page.dart';
 import 'package:c22_101/service/auth_service.dart';
 import 'package:c22_101/shared/constants.dart';
@@ -18,6 +17,7 @@ class ListContactPage extends StatefulWidget {
 class _ListContactPageState extends State<ListContactPage> {
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     AuthService authService = AuthService();
     FirebaseFirestore firebase = FirebaseFirestore.instance;
     CollectionReference users = firebase.collection('contact');
